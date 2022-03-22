@@ -1,0 +1,45 @@
+name: Scrape latest schemas
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron:  '42 3 * * *'
+
+jobs:
+  scheduled:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out this repo
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Ensure npx uses a cache
+    - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'npm'
+          cache-dependency-path: '**/.github/workflows/*.yml'
+    - name: Configure Git for commits
+      run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
+    - name: GitHub
+      run: |-
+        mkdir -p github
+        npx get-graphql-schema https://api.github.com/graphql \
+          -h 'Authorization=Bearer ${{ secrets.GITHUB_TOKEN }}' > github/github.graphql
+    - name: Commit and push if it changed
+      run: |-
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "GitHub: ${timestamp}" || exit 0
+        git push
+    - name: Fly
+      run: |-
+        npx get-graphql-schema https://api.fly.io/graphql > flyctl/fly.graphql
+    - name: Commit and push if it changed
+      run: |-
+        git add -A
+        timestamp=$(date -u)
+        git commit -m "Fly: ${timestamp}" || exit 0
+        git push
