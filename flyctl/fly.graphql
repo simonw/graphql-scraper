@@ -2667,6 +2667,7 @@ type IPAddressEdge {
 enum IPAddressType {
   v4
   v6
+  private_v6
 }
 
 """An ISO 8601-encoded datetime"""
