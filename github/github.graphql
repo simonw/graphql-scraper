@@ -26561,7 +26561,7 @@ input StartRepositoryMigrationInput {
   metadataArchiveUrl: String
 
   """The Octoshift migration source access token."""
-  accessToken: String
+  accessToken: String!
 
   """
   The GitHub personal access token of the user importing to the target repository.
