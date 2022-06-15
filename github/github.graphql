@@ -12893,7 +12893,7 @@ type Mutation {
     input: UpdatePullRequestInput!
   ): UpdatePullRequestPayload
 
-  """Merge HEAD from upstream branch into pull request branch"""
+  """Merge or Rebase HEAD from upstream branch into pull request branch"""
   updatePullRequestBranch(
     """Parameters for UpdatePullRequestBranch"""
     input: UpdatePullRequestBranchInput!
@@ -15575,6 +15575,9 @@ type OrgRemoveMemberAuditEntry implements Node & AuditEntry & OrganizationAuditE
 
 """The type of membership a user has with an Organization."""
 enum OrgRemoveMemberAuditEntryMembershipType {
+  """A suspended member."""
+  SUSPENDED
+
   """A direct member is a user that is a member of the Organization."""
   DIRECT_MEMBER
 
@@ -22798,6 +22801,12 @@ enum ReportedContentClassifiers {
 
 """A repository contains the content for a project."""
 type Repository implements Node & ProjectOwner & PackageOwner & Subscribable & Starrable & UniformResourceLocatable & RepositoryInfo {
+  """
+  Whether or not a pull request head branch that is behind its base branch can
+  always be updated even if it is not required to be up to date before merging.
+  """
+  allowUpdateBranch: Boolean!
+
   """A list of users that can be assigned to issues in this repository."""
   assignableUsers(
     """Filters users with query on user name and login"""
