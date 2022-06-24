@@ -1238,7 +1238,7 @@ input CreateAppInput {
   organizationId: ID!
 
   """The application runtime"""
-  runtime: RuntimeType
+  runtime: RuntimeType = FIRECRACKER
 
   """The name of the new application. Defaults to a random name."""
   name: String
