@@ -3477,7 +3477,11 @@ type ContributionsCollection {
     excludePopular: Boolean = false
   ): [PullRequestContributionsByRepository!]!
 
-  """Pull request review contributions made by the user."""
+  """
+  Pull request review contributions made by the user. Returns the most recently
+  submitted review for each PR reviewed by the user.
+  
+  """
   pullRequestReviewContributions(
     """Returns the elements in the list that come after the specified cursor."""
     after: String
