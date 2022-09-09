@@ -6896,6 +6896,39 @@ enum EnterpriseAdministratorRole {
   BILLING_MANAGER
 }
 
+"""
+The possible values for the enterprise allow private repository forking policy value.
+"""
+enum EnterpriseAllowPrivateRepositoryForkingPolicyValue {
+  """
+  Members can fork a repository to an organization within this enterprise.
+  """
+  ENTERPRISE_ORGANIZATIONS
+
+  """
+  Members can fork a repository only within the same organization (intra-org).
+  """
+  SAME_ORGANIZATION
+
+  """
+  Members can fork a repository to their user account or within the same organization.
+  """
+  SAME_ORGANIZATION_USER_ACCOUNTS
+
+  """
+  Members can fork a repository to their enterprise-managed user account or an organization inside this enterprise.
+  """
+  ENTERPRISE_ORGANIZATIONS_USER_ACCOUNTS
+
+  """Members can fork a repository to their user account."""
+  USER_ACCOUNTS
+
+  """
+  Members can fork a repository to their user account or an organization, either inside or outside of this enterprise.
+  """
+  EVERYWHERE
+}
+
 """Metadata for an audit entry containing enterprise account information."""
 interface EnterpriseAuditEntryData {
   """The HTTP path for this enterprise."""
@@ -7298,6 +7331,11 @@ type EnterpriseOwnerInfo {
     """Ordering options for organizations with this setting."""
     orderBy: OrganizationOrder = {field: LOGIN, direction: ASC}
   ): OrganizationConnection!
+
+  """
+  The value for the allow private repository forking policy on the enterprise.
+  """
+  allowPrivateRepositoryForkingSettingPolicyValue: EnterpriseAllowPrivateRepositoryForkingPolicyValue
 
   """
   The setting value for base repository permissions for organizations in this enterprise.
@@ -31047,6 +31085,11 @@ input UpdateEnterpriseAllowPrivateRepositoryForkingSettingInput {
   The value for the allow private repository forking setting on the enterprise.
   """
   settingValue: EnterpriseEnabledDisabledSettingValue!
+
+  """
+  The value for the allow private repository forking policy on the enterprise.
+  """
+  policyValue: EnterpriseAllowPrivateRepositoryForkingPolicyValue
 
   """A unique identifier for the client performing the mutation."""
   clientMutationId: String
