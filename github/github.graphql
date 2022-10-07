@@ -5438,6 +5438,9 @@ enum DependencyGraphEcosystem {
 
   """Rust crates"""
   RUST
+
+  """Dart packages hosted at pub.dev"""
+  PUB
 }
 
 """Represents a 'deployed' event on a given pull request."""
@@ -27633,6 +27636,9 @@ enum SecurityAdvisoryEcosystem {
 
   """Python packages hosted at PyPI.org"""
   PIP
+
+  """Dart packages hosted at pub.dev"""
+  PUB
 
   """Ruby gems hosted at RubyGems.org"""
   RUBYGEMS
