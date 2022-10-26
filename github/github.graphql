@@ -19221,6 +19221,9 @@ enum ProjectV2FieldType {
 
   """Tracks"""
   TRACKS
+
+  """Tracked by"""
+  TRACKED_BY
 }
 
 """
