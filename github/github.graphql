@@ -19322,6 +19322,12 @@ input ProjectV2FieldValue {
   iterationId: String
 }
 
+"""Ways in which to filter lists of projects."""
+input ProjectV2Filters {
+  """List project v2 filtered by the state given."""
+  state: ProjectV2State
+}
+
 """An item within a Project."""
 type ProjectV2Item implements Node {
   """The content of the referenced draft issue, issue, or pull request"""
@@ -19998,6 +20004,15 @@ type ProjectV2SortByFieldEdge {
 
   """The item at the end of the edge."""
   node: ProjectV2SortByField
+}
+
+"""The possible states of a project v2."""
+enum ProjectV2State {
+  """A project v2 that is still open"""
+  OPEN
+
+  """A project v2 that has been closed"""
+  CLOSED
 }
 
 """A view within a ProjectV2."""
@@ -29840,6 +29855,12 @@ type Team implements Node & Subscribable & MemberStatusable {
 
     """How to order the returned projects."""
     orderBy: ProjectV2Order = {field: NUMBER, direction: DESC}
+
+    """Filtering options for projects returned from this connection"""
+    filterBy: ProjectV2Filters = {}
+
+    """The query to search projects by."""
+    query: String = ""
   ): ProjectV2Connection!
 
   """A list of repositories this team has access to."""
