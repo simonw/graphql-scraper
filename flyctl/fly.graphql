@@ -4929,6 +4929,9 @@ enum ServiceHandlerType {
   """Convert TLS connection to unencrypted TCP"""
   TLS
 
+  """Handle TLS for PostgreSQL connections"""
+  PG_TLS
+
   """Convert TCP connection to HTTP"""
   HTTP
 
