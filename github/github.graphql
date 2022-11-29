@@ -26791,6 +26791,9 @@ enum RepositoryLockReason {
 
   """The repository is locked due to a migration."""
   MIGRATING
+
+  """The repository is locked due to a trade controls related reason."""
+  TRADE_RESTRICTION
 }
 
 """An Octoshift repository migration."""
