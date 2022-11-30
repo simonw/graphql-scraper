@@ -53,6 +53,9 @@ type AddOn implements Node {
 
   """Regions where replica instances are deployed"""
   readRegions: [String!]
+
+  """Redis database statistics"""
+  stats: JSON
 }
 
 """The connection type for AddOn."""
