@@ -26,6 +26,9 @@ type AddOn implements Node {
   """The add-on plan"""
   addOnPlan: AddOnPlan
 
+  """The display name for an add-on plan"""
+  addOnPlanName: String
+
   """DNS hostname for the add-on"""
   hostname: String
   id: ID!
@@ -454,6 +457,7 @@ type App implements Node {
   """Secrets set on the application"""
   secrets: [Secret!]!
   services: [Service!]!
+  sharedIpAddress: String
   state: AppState!
 
   """Application status"""
@@ -3058,6 +3062,7 @@ enum IPAddressType {
   v4
   v6
   private_v6
+  shared_v4
 }
 
 """An ISO 8601-encoded datetime"""
