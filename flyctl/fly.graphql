@@ -4456,6 +4456,7 @@ type Queries {
 
   """Fly.io product and price information"""
   products: [Product!]!
+  validateConfig(definition: JSON!): AppConfig!
   viewer: User!
 
   """Find a persistent volume by ID"""
