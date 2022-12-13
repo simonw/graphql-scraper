@@ -175,6 +175,11 @@ input AllocateIPAddressInput {
   """The type of IP address to allocate (v4, v6, or private_v6)"""
   type: IPAddressType!
 
+  """
+  The organization whose network should be used for private IP allocation
+  """
+  organizationId: ID
+
   """Desired IP region (defaults to global)"""
   region: String
 }
@@ -420,6 +425,7 @@ type App implements Node {
   """The unique application name"""
   name: String!
   network: String
+  networkId: Int
 
   """Organization that owns this app"""
   organization: Organization!
