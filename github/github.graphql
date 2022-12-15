@@ -4779,6 +4779,9 @@ input CreatePullRequestInput {
   """
   headRefName: String!
 
+  """The Node ID of the head repository."""
+  headRepositoryId: ID
+
   """The title of the pull request."""
   title: String!
 
