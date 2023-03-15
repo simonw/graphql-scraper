@@ -21079,6 +21079,13 @@ type PullRequest implements Node & Assignable & Closable & Comment & Updatable &
   """Check if the current viewer can update this object."""
   viewerCanUpdate: Boolean!
 
+  """
+  Whether or not the viewer can update the head ref of this PR, by merging or rebasing the base ref.
+  If the head ref is up to date or unable to be updated by this user, this will return false.
+  
+  """
+  viewerCanUpdateBranch: Boolean!
+
   """Reasons why the current viewer can not update this comment."""
   viewerCannotUpdateReasons: [CommentCannotUpdateReason!]!
 
