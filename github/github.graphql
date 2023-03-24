@@ -4663,7 +4663,7 @@ input CreateMigrationSourceInput {
   """
   The migration source URL, for example `https://github.com` or `https://monalisa.ghe.com`.
   """
-  url: String!
+  url: String
 
   """The migration source access token."""
   accessToken: String
@@ -21734,6 +21734,9 @@ type PullRequestReviewComment implements Node & Comment & Deletable & Minimizabl
   """The moment the editor made the last edit"""
   lastEditedAt: DateTime
 
+  """The end line number on the file to which the comment applies"""
+  line: Int
+
   """
   Returns why the comment was minimized. One of `abuse`, `off-topic`,
   `outdated`, `resolved`, `duplicate` and `spam`. Note that the case and
@@ -21744,8 +21747,18 @@ type PullRequestReviewComment implements Node & Comment & Deletable & Minimizabl
   """Identifies the original commit associated with the comment."""
   originalCommit: Commit
 
+  """
+  The end line number on the file to which the comment applied when it was first created
+  """
+  originalLine: Int
+
   """The original line index in the diff to which the comment applies."""
   originalPosition: Int!
+
+  """
+  The start line number on the file to which the comment applied when it was first created
+  """
+  originalStartLine: Int
 
   """Identifies when the comment body is outdated"""
   outdated: Boolean!
@@ -21799,6 +21812,9 @@ type PullRequestReviewComment implements Node & Comment & Deletable & Minimizabl
 
   """The HTTP path permalink for this review comment."""
   resourcePath: URI!
+
+  """The start line number on the file to which the comment applies"""
+  startLine: Int
 
   """Identifies the state of the comment."""
   state: PullRequestReviewCommentState!
@@ -30585,7 +30601,7 @@ input StartRepositoryMigrationInput {
   ownerId: ID!
 
   """The URL of the source repository."""
-  sourceRepositoryUrl: URI!
+  sourceRepositoryUrl: URI
 
   """The name of the imported repository."""
   repositoryName: String!
@@ -30600,7 +30616,7 @@ input StartRepositoryMigrationInput {
   metadataArchiveUrl: String
 
   """The migration source access token."""
-  accessToken: String!
+  accessToken: String
 
   """
   The GitHub personal access token of the user importing to the target repository.
