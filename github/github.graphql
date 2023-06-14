@@ -29250,6 +29250,19 @@ enum RuleBypassMode {
 
   """Those with bypass permission at the organization level can bypass"""
   ORGANIZATION
+
+  """Bypassing is disabled"""
+  ORGANIZATION_NONE
+
+  """
+  Those with bypass permission at the organization level can bypass for pull requests only
+  """
+  ORGANIZATION_PRS_ONLY
+
+  """
+  Those with bypass permission at the organization level can always bypass
+  """
+  ORGANIZATION_ALWAYS
 }
 
 """The level of enforcement for a rule or ruleset."""
