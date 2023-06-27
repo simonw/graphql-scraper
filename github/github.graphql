@@ -27705,6 +27705,18 @@ type RepositoryEdge {
   node: Repository
 }
 
+"""Parameters to be used for the repository_id condition"""
+type RepositoryIdConditionTarget {
+  """One of these repo IDs must match the repo."""
+  repositoryIds: [ID!]!
+}
+
+"""Parameters to be used for the repository_id condition"""
+input RepositoryIdConditionTargetInput {
+  """One of these repo IDs must match the repo."""
+  repositoryIds: [ID!]!
+}
+
 """A subset of repository info."""
 interface RepositoryInfo {
   """Identifies the date and time when the repository was archived."""
@@ -28249,6 +28261,9 @@ type RepositoryRuleConditions {
   """Configuration for the ref_name condition"""
   refName: RefNameConditionTarget
 
+  """Configuration for the repository_id condition"""
+  repositoryId: RepositoryIdConditionTarget
+
   """Configuration for the repository_name condition"""
   repositoryName: RepositoryNameConditionTarget
 }
@@ -28260,6 +28275,9 @@ input RepositoryRuleConditionsInput {
 
   """Configuration for the repository_name condition"""
   repositoryName: RepositoryNameConditionTargetInput
+
+  """Configuration for the repository_id condition"""
+  repositoryId: RepositoryIdConditionTargetInput
 }
 
 """The connection type for RepositoryRule."""
