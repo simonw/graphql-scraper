@@ -1,0 +1,218 @@
+[
+  {
+    "code": "ams",
+    "latitude": 52.374342,
+    "longitude": 4.895439,
+    "name": "Amsterdam, Netherlands"
+  },
+  {
+    "code": "arn",
+    "latitude": 59.6512,
+    "longitude": 17.9178,
+    "name": "Stockholm, Sweden"
+  },
+  {
+    "code": "atl",
+    "latitude": 33.6407,
+    "longitude": -84.4277,
+    "name": "Atlanta, Georgia (US)"
+  },
+  {
+    "code": "bog",
+    "latitude": 4.70159,
+    "longitude": -74.1469,
+    "name": "Bogotá, Colombia"
+  },
+  {
+    "code": "bom",
+    "latitude": 19.097403,
+    "longitude": 72.874245,
+    "name": "Mumbai, India"
+  },
+  {
+    "code": "bos",
+    "latitude": 42.366978,
+    "longitude": -71.022362,
+    "name": "Boston, Massachusetts (US)"
+  },
+  {
+    "code": "cdg",
+    "latitude": 48.860875,
+    "longitude": 2.353477,
+    "name": "Paris, France"
+  },
+  {
+    "code": "den",
+    "latitude": 39.7392,
+    "longitude": -104.9847,
+    "name": "Denver, Colorado (US)"
+  },
+  {
+    "code": "dfw",
+    "latitude": 32.778287,
+    "longitude": -96.7984,
+    "name": "Dallas, Texas (US)"
+  },
+  {
+    "code": "ewr",
+    "latitude": 40.789543,
+    "longitude": -74.056534,
+    "name": "Secaucus, NJ (US)"
+  },
+  {
+    "code": "eze",
+    "latitude": -34.8222,
+    "longitude": -58.5358,
+    "name": "Ezeiza, Argentina"
+  },
+  {
+    "code": "fra",
+    "latitude": 50.1167,
+    "longitude": 8.6833,
+    "name": "Frankfurt, Germany"
+  },
+  {
+    "code": "gdl",
+    "latitude": 20.5217,
+    "longitude": -103.3109,
+    "name": "Guadalajara, Mexico"
+  },
+  {
+    "code": "gig",
+    "latitude": -22.8099,
+    "longitude": -43.2505,
+    "name": "Rio de Janeiro, Brazil"
+  },
+  {
+    "code": "gru",
+    "latitude": -23.549664,
+    "longitude": -46.654351,
+    "name": "Sao Paulo, Brazil"
+  },
+  {
+    "code": "hkg",
+    "latitude": 22.250971,
+    "longitude": 114.203224,
+    "name": "Hong Kong, Hong Kong"
+  },
+  {
+    "code": "iad",
+    "latitude": 39.02214,
+    "longitude": -77.462556,
+    "name": "Ashburn, Virginia (US)"
+  },
+  {
+    "code": "jnb",
+    "latitude": -26.13629,
+    "longitude": 28.20298,
+    "name": "Johannesburg, South Africa"
+  },
+  {
+    "code": "lax",
+    "latitude": 33.9416,
+    "longitude": -118.4085,
+    "name": "Los Angeles, California (US)"
+  },
+  {
+    "code": "lhr",
+    "latitude": 51.516434,
+    "longitude": -0.125656,
+    "name": "London, United Kingdom"
+  },
+  {
+    "code": "maa",
+    "latitude": 13.064429,
+    "longitude": 80.253067,
+    "name": "Chennai (Madras), India"
+  },
+  {
+    "code": "mad",
+    "latitude": 40.4381,
+    "longitude": -3.82,
+    "name": "Madrid, Spain"
+  },
+  {
+    "code": "mia",
+    "latitude": 25.7877,
+    "longitude": -80.2241,
+    "name": "Miami, Florida (US)"
+  },
+  {
+    "code": "nrt",
+    "latitude": 35.621608,
+    "longitude": 139.741851,
+    "name": "Tokyo, Japan"
+  },
+  {
+    "code": "ord",
+    "latitude": 41.891544,
+    "longitude": -87.630386,
+    "name": "Chicago, Illinois (US)"
+  },
+  {
+    "code": "otp",
+    "latitude": 44.4325,
+    "longitude": 26.1039,
+    "name": "Bucharest, Romania"
+  },
+  {
+    "code": "phx",
+    "latitude": 33.416084,
+    "longitude": -112.009482,
+    "name": "Phoenix, Arizona (US)"
+  },
+  {
+    "code": "qro",
+    "latitude": 20.62,
+    "longitude": -100.1863,
+    "name": "Querétaro, Mexico"
+  },
+  {
+    "code": "scl",
+    "latitude": -33.36572,
+    "longitude": -70.64292,
+    "name": "Santiago, Chile"
+  },
+  {
+    "code": "sea",
+    "latitude": 47.6097,
+    "longitude": -122.3331,
+    "name": "Seattle, Washington (US)"
+  },
+  {
+    "code": "sin",
+    "latitude": 1.3,
+    "longitude": 103.8,
+    "name": "Singapore, Singapore"
+  },
+  {
+    "code": "sjc",
+    "latitude": 37.351601,
+    "longitude": -121.896744,
+    "name": "San Jose, California (US)"
+  },
+  {
+    "code": "syd",
+    "latitude": -33.866033,
+    "longitude": 151.20693,
+    "name": "Sydney, Australia"
+  },
+  {
+    "code": "waw",
+    "latitude": 52.1657,
+    "longitude": 20.9671,
+    "name": "Warsaw, Poland"
+  },
+  {
+    "code": "yul",
+    "latitude": 45.48647,
+    "longitude": -73.75549,
+    "name": "Montreal, Canada"
+  },
+  {
+    "code": "yyz",
+    "latitude": 43.644632,
+    "longitude": -79.384228,
+    "name": "Toronto, Canada"
+  }
+]
