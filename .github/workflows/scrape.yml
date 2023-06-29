@@ -37,6 +37,20 @@ jobs:
     - name: Fly
       run: |-
         npx get-graphql-schema https://api.fly.io/graphql > flyctl/fly.graphql
+    - name: Fly regions and vmsizes
+      env:
+        FLY_SIMONW_API_TOKEN: ${{ secrets.FLY_SIMONW_API_TOKEN }}
+      run: |-
+        curl -X POST \
+          -H "Content-Type: application/json" \
+          -H "Authorization: Bearer $FLY_SIMONW_API_TOKEN" \
+          -d '{"query":"{ platform { regions { code latitude longitude name } } }"}' \
+          https://api.fly.io/graphql | jq '.data.platform.regions' > flyctl/regions.json
+        curl -X POST \
+          -H "Content-Type: application/json" \
+          -H "Authorization: Bearer $FLY_SIMONW_API_TOKEN" \
+          -d '{"query":"{ platform { vmSizes { name cpuCores maxMemoryMb memoryGb memoryIncrementsMb memoryMb priceMonth priceSecond } } }"}' \
+          https://api.fly.io/graphql | jq '.data.platform.vmSizes' > flyctl/vmSizes.json
     - name: Commit and push if it changed
       run: |-
         git add -A
