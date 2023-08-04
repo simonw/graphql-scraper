@@ -10370,6 +10370,11 @@ type GitHubMetadata {
   """IP addresses that users connect to for git operations"""
   gitIpAddresses: [String!]
 
+  """
+  IP addresses that GitHub Enterprise Importer uses for outbound connections
+  """
+  githubEnterpriseImporterIpAddresses: [String!]
+
   """IP addresses that service hooks are sent from"""
   hookIpAddresses: [String!]
 
@@ -32346,7 +32351,10 @@ input StartRepositoryMigrationInput {
   """The name of the imported repository."""
   repositoryName: String!
 
-  """Whether to continue the migration on error. Defaults to `false`."""
+  """
+  Whether to continue the migration on error. Defaults to `false`. We strongly
+  recommend setting this to `true` for the smoothest migration experience.
+  """
   continueOnError: Boolean
 
   """The signed URL to access the user-uploaded git archive."""
