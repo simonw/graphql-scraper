@@ -6821,6 +6821,9 @@ type Discussion implements Closable & Comment & Updatable & Deletable & Labelabl
   """
   includesCreatedEdit: Boolean!
 
+  """Only return answered/unanswered discussions"""
+  isAnswered: Boolean
+
   """A list of labels associated with the object."""
   labels(
     """Ordering options for labels returned from the connection."""
@@ -27004,6 +27007,9 @@ type Repository implements Node & ProjectV2Recent & ProjectOwner & PackageOwner 
 
     """Ordering options for discussions returned from the connection."""
     orderBy: DiscussionOrder = {field: UPDATED_AT, direction: DESC}
+
+    """Only show answered or unanswered discussions"""
+    answered: Boolean = null
   ): DiscussionConnection!
 
   """The number of kilobytes this repository occupies on disk."""
@@ -28901,16 +28907,15 @@ enum RepositoryRuleType {
   """Only allow users with bypass permissions to delete matching refs."""
   DELETION
 
-  """Prevent merge commits from being pushed to matching branches."""
+  """Prevent merge commits from being pushed to matching refs."""
   REQUIRED_LINEAR_HISTORY
 
   """
-  Choose which environments must be successfully deployed to before branches can
-  be merged into a branch that matches this rule.
+  Choose which environments must be successfully deployed to before refs can be merged into a branch that matches this rule.
   """
   REQUIRED_DEPLOYMENTS
 
-  """Commits pushed to matching branches must have verified signatures."""
+  """Commits pushed to matching refs must have verified signatures."""
   REQUIRED_SIGNATURES
 
   """
@@ -28921,12 +28926,12 @@ enum RepositoryRuleType {
   """
   Choose which status checks must pass before branches can be merged into a
   branch that matches this rule. When enabled, commits must first be pushed to
-  another branch, then merged or pushed directly to a branch that matches this
-  rule after status checks have passed.
+  another branch, then merged or pushed directly to a ref that matches this rule
+  after status checks have passed.
   """
   REQUIRED_STATUS_CHECKS
 
-  """Prevent users with push access from force pushing to branches."""
+  """Prevent users with push access from force pushing to refs."""
   NON_FAST_FORWARD
 
   """Commit message pattern"""
@@ -29325,8 +29330,7 @@ interface RequirableByPullRequest {
 }
 
 """
-Choose which environments must be successfully deployed to before branches can
-be merged into a branch that matches this rule.
+Choose which environments must be successfully deployed to before refs can be merged into a branch that matches this rule.
 """
 type RequiredDeploymentsParameters {
   """
@@ -29336,8 +29340,7 @@ type RequiredDeploymentsParameters {
 }
 
 """
-Choose which environments must be successfully deployed to before branches can
-be merged into a branch that matches this rule.
+Choose which environments must be successfully deployed to before refs can be merged into a branch that matches this rule.
 """
 input RequiredDeploymentsParametersInput {
   """
@@ -29375,7 +29378,7 @@ input RequiredStatusCheckInput {
 """
 Choose which status checks must pass before branches can be merged into a branch
 that matches this rule. When enabled, commits must first be pushed to another
-branch, then merged or pushed directly to a branch that matches this rule after
+branch, then merged or pushed directly to a ref that matches this rule after
 status checks have passed.
 """
 type RequiredStatusChecksParameters {
@@ -29393,7 +29396,7 @@ type RequiredStatusChecksParameters {
 """
 Choose which status checks must pass before branches can be merged into a branch
 that matches this rule. When enabled, commits must first be pushed to another
-branch, then merged or pushed directly to a branch that matches this rule after
+branch, then merged or pushed directly to a ref that matches this rule after
 status checks have passed.
 """
 input RequiredStatusChecksParametersInput {
