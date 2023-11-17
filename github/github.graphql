@@ -30994,6 +30994,9 @@ type SponsorsActivity implements Node {
   currentPrivacyLevel: SponsorshipPrivacy
   id: ID!
 
+  """The platform that was used to pay for the sponsorship."""
+  paymentSource: SponsorshipPaymentSource
+
   """The tier that the sponsorship used to use, for tier change events."""
   previousSponsorsTier: SponsorsTier
 
