@@ -25796,7 +25796,7 @@ type PushAllowanceEdge {
 }
 
 """The query root of GitHub's GraphQL interface."""
-type Query {
+type Query implements Node {
   """Look up a code of conduct by its key"""
   codeOfConduct(
     """The code of conduct's key"""
@@ -25855,6 +25855,9 @@ type Query {
     """The invitation token sent with the invitation email."""
     invitationToken: String!
   ): EnterpriseMemberInvitation
+
+  """ID of the object."""
+  id: ID!
 
   """Look up an open source license by its key"""
   license(
@@ -32298,7 +32301,7 @@ input RuleParametersInput {
 }
 
 """Types which can have `RepositoryRule` objects."""
-union RuleSource = Organization | Repository
+union RuleSource = Enterprise | Organization | Repository
 
 """
 The possible digest algorithms used to sign SAML requests for an identity provider.
