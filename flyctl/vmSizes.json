@@ -1,7 +1,7 @@
 [
   {
     "name": "shared-cpu-1x",
-    "cpuCores": 1,
+    "cpuCores": 1.0,
     "maxMemoryMb": 2048,
     "memoryGb": 0.25,
     "memoryIncrementsMb": [
@@ -11,62 +11,62 @@
     ],
     "memoryMb": 256,
     "priceMonth": 1.94,
-    "priceSecond": 7.5e-07
+    "priceSecond": 7.5E-7
   },
   {
     "name": "dedicated-cpu-1x",
-    "cpuCores": 1,
+    "cpuCores": 1.0,
     "maxMemoryMb": 8192,
-    "memoryGb": 2,
+    "memoryGb": 2.0,
     "memoryIncrementsMb": [
       2048,
       4096,
       8192
     ],
     "memoryMb": 2048,
-    "priceMonth": 31,
-    "priceSecond": 1.196e-05
+    "priceMonth": 31.0,
+    "priceSecond": 0.00001196
   },
   {
     "name": "dedicated-cpu-2x",
-    "cpuCores": 2,
+    "cpuCores": 2.0,
     "maxMemoryMb": 16384,
-    "memoryGb": 4,
+    "memoryGb": 4.0,
     "memoryIncrementsMb": [
       4096,
       8192,
       16384
     ],
     "memoryMb": 4096,
-    "priceMonth": 62,
-    "priceSecond": 2.392e-05
+    "priceMonth": 62.0,
+    "priceSecond": 0.00002392
   },
   {
     "name": "dedicated-cpu-4x",
-    "cpuCores": 4,
+    "cpuCores": 4.0,
     "maxMemoryMb": 32768,
-    "memoryGb": 8,
+    "memoryGb": 8.0,
     "memoryIncrementsMb": [
       8192,
       16384,
       32768
     ],
     "memoryMb": 8192,
-    "priceMonth": 124,
-    "priceSecond": 4.784e-05
+    "priceMonth": 124.0,
+    "priceSecond": 0.00004784
   },
   {
     "name": "dedicated-cpu-8x",
-    "cpuCores": 8,
+    "cpuCores": 8.0,
     "maxMemoryMb": 65536,
-    "memoryGb": 16,
+    "memoryGb": 16.0,
     "memoryIncrementsMb": [
       16384,
       32768,
       65536
     ],
     "memoryMb": 16384,
-    "priceMonth": 248,
-    "priceSecond": 9.568e-05
+    "priceMonth": 248.0,
+    "priceSecond": 0.00009568
   }
 ]
