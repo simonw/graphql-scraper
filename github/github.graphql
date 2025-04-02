@@ -842,21 +842,6 @@ type AnnouncementBanner {
   message: String
 }
 
-"""Represents an announcement banner."""
-interface AnnouncementBannerI {
-  """The text of the announcement"""
-  announcement: String @deprecated(reason: "The individual `announcementX` fields do not follow our standard GraphQL patterns. Use the `announcementBanner` object instead. Removal on 2025-04-01 UTC.")
-
-  """The date the announcement was created"""
-  announcementCreatedAt: DateTime @deprecated(reason: "The individual `announcementX` fields do not follow our standard GraphQL patterns. Use the `announcementBanner` object instead. Removal on 2025-04-01 UTC.")
-
-  """The expiration date of the announcement, if any"""
-  announcementExpiresAt: DateTime @deprecated(reason: "The individual `announcementX` fields do not follow our standard GraphQL patterns. Use the `announcementBanner` object instead. Removal on 2025-04-01 UTC.")
-
-  """Whether the announcement can be dismissed by the user"""
-  announcementUserDismissible: Boolean @deprecated(reason: "The individual `announcementX` fields do not follow our standard GraphQL patterns. Use the `announcementBanner` object instead. Removal on 2025-04-01 UTC.")
-}
-
 """A GitHub App."""
 type App implements Node {
   """The client ID of the app."""
@@ -8517,23 +8502,11 @@ type EnqueuePullRequestPayload {
 """
 An account to manage multiple organizations with consolidated policy and billing.
 """
-type Enterprise implements AnnouncementBannerI & Node {
-  """The text of the announcement"""
-  announcement: String @deprecated(reason: "The individual `announcementX` fields do not follow our standard GraphQL patterns. Use the `announcementBanner` object instead. Removal on 2025-04-01 UTC.")
-
+type Enterprise implements Node {
   """
   The announcement banner set on this enterprise, if any. Only visible to members of the enterprise.
   """
   announcementBanner: AnnouncementBanner
-
-  """The date the announcement was created"""
-  announcementCreatedAt: DateTime @deprecated(reason: "The individual `announcementX` fields do not follow our standard GraphQL patterns. Use the `announcementBanner` object instead. Removal on 2025-04-01 UTC.")
-
-  """The expiration date of the announcement, if any"""
-  announcementExpiresAt: DateTime @deprecated(reason: "The individual `announcementX` fields do not follow our standard GraphQL patterns. Use the `announcementBanner` object instead. Removal on 2025-04-01 UTC.")
-
-  """Whether the announcement can be dismissed by the user"""
-  announcementUserDismissible: Boolean @deprecated(reason: "The individual `announcementX` fields do not follow our standard GraphQL patterns. Use the `announcementBanner` object instead. Removal on 2025-04-01 UTC.")
 
   """A URL pointing to the enterprise's public avatar."""
   avatarUrl(
@@ -12990,6 +12963,11 @@ input IssueFilters {
 
   """List issues filtered by the list of states given."""
   states: [IssueState!]
+
+  """
+  List issues filtered by the type given, only supported by searches on repositories.
+  """
+  type: String
 
   """List issues subscribed to by viewer."""
   viewerSubscribed: Boolean = false
@@ -17597,23 +17575,11 @@ enum OrgAddMemberAuditEntryPermission {
 """
 An account on GitHub, with one or more owners, that has repositories, members and teams.
 """
-type Organization implements Actor & AnnouncementBannerI & MemberStatusable & Node & PackageOwner & ProfileOwner & ProjectOwner & ProjectV2Owner & ProjectV2Recent & RepositoryDiscussionAuthor & RepositoryDiscussionCommentAuthor & RepositoryOwner & Sponsorable & UniformResourceLocatable {
-  """The text of the announcement"""
-  announcement: String @deprecated(reason: "The individual `announcementX` fields do not follow our standard GraphQL patterns. Use the `announcementBanner` object instead. Removal on 2025-04-01 UTC.")
-
+type Organization implements Actor & MemberStatusable & Node & PackageOwner & ProfileOwner & ProjectOwner & ProjectV2Owner & ProjectV2Recent & RepositoryDiscussionAuthor & RepositoryDiscussionCommentAuthor & RepositoryOwner & Sponsorable & UniformResourceLocatable {
   """
   The announcement banner set on this organization, if any. Only visible to members of the organization's enterprise.
   """
   announcementBanner: AnnouncementBanner
-
-  """The date the announcement was created"""
-  announcementCreatedAt: DateTime @deprecated(reason: "The individual `announcementX` fields do not follow our standard GraphQL patterns. Use the `announcementBanner` object instead. Removal on 2025-04-01 UTC.")
-
-  """The expiration date of the announcement, if any"""
-  announcementExpiresAt: DateTime @deprecated(reason: "The individual `announcementX` fields do not follow our standard GraphQL patterns. Use the `announcementBanner` object instead. Removal on 2025-04-01 UTC.")
-
-  """Whether the announcement can be dismissed by the user"""
-  announcementUserDismissible: Boolean @deprecated(reason: "The individual `announcementX` fields do not follow our standard GraphQL patterns. Use the `announcementBanner` object instead. Removal on 2025-04-01 UTC.")
 
   """
   Determine if this repository owner has any items that can be pinned to their profile.
