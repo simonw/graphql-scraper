@@ -103,6 +103,7 @@ type AddOn implements Node {
     """Returns the last _n_ elements from the list."""
     last: Int
   ): AppConnection
+  createdAt: ISO8601DateTime!
 
   """Environment variables for the add-on"""
   environment: JSON
@@ -149,6 +150,7 @@ type AddOn implements Node {
 
   """Status of the add-on"""
   status: String
+  updatedAt: ISO8601DateTime!
 }
 
 """The connection type for AddOn."""
