@@ -5293,7 +5293,7 @@ input CreateIssueInput {
   """The body for the issue description."""
   body: String
 
-  """The Node ID for the user assignee for this issue."""
+  """The Node ID of assignees for this issue."""
   assigneeIds: [ID!]
 
   """The Node ID of the milestone for this issue."""
